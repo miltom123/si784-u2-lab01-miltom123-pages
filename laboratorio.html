@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+      <title>Desarrollo del laboratorio | Pruebas unitarias con MSTest </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Desarrollo del laboratorio | Pruebas unitarias con MSTest ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/docs/laboratorio.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="MyMath &#183; SI784">
+            MyMath &#183; SI784
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="desarrollo-del-laboratorio">Desarrollo del laboratorio</h1>
+
+<h2 id="1-preparación-y-estructura">1. Preparación y estructura</h2>
+<p>Se utiliza .NET 8, que satisface el requisito de .NET 6 o superior, y una solución
+con dos proyectos: <code>Math.Lib</code>, biblioteca de clases, y <code>Math.Tests</code>, pruebas MSTest.
+El segundo referencia al primero. Los archivos de ejemplo <code>Class1.cs</code> y
+<code>UnitTest1.cs</code> se sustituyen por <code>Rooter.cs</code> y <code>RooterTests.cs</code>.</p>
+<pre><code class="lang-powershell">dotnet new sln -o MyMath
+dotnet new classlib -o MyMath/Math.Lib --framework net8.0
+dotnet new mstest -o MyMath/Math.Tests --framework net8.0
+dotnet sln MyMath/MyMath.sln add MyMath/Math.Lib/Math.Lib.csproj MyMath/Math.Tests/Math.Tests.csproj
+dotnet add MyMath/Math.Tests/Math.Tests.csproj reference MyMath/Math.Lib/Math.Lib.csproj
+</code></pre>
+<p>No se necesita un contenedor para ejecutar este laboratorio: los pasos de la guía
+utilizan directamente el SDK de .NET. Tampoco requieren elevar privilegios.</p>
+<h2 id="2-evolución-de-la-solución-propuesta-en-la-guía">2. Evolución de la solución propuesta en la guía</h2>
+<p>La siguiente tabla explica las etapas del enunciado. La entrega conserva la versión
+final; el script <code>Show-Tdd.ps1</code> reproduce las etapas intermedias en una copia aislada.</p>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Implementación</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prueba inicial</td>
+<td><code>Rooter</code> todavía no existe</td>
+<td>Error de compilación</td>
+</tr>
+<tr>
+<td>Implementación mínima</td>
+<td><code>return input / 2</code></td>
+<td>Pasa para 4, pero falla en el rango</td>
+</tr>
+<tr>
+<td>Ampliación del rango</td>
+<td>Raíces esperadas desde <code>1e-8</code>, multiplicadas por 3,2</td>
+<td>Detecta que dividir entre dos no calcula raíces</td>
+</tr>
+<tr>
+<td>Método de Newton</td>
+<td>Refinamiento iterativo</td>
+<td>Satisface la tolerancia del rango</td>
+</tr>
+<tr>
+<td>Entrada negativa</td>
+<td>Sin validación del dominio</td>
+<td>No garantiza la excepción exigida</td>
+</tr>
+<tr>
+<td>Validación final</td>
+<td>Excepción para entradas fuera del dominio</td>
+<td>Pasa la prueba de excepción y de mensaje</td>
+</tr>
+</tbody>
+</table>
+<p>Para obtener registros reales de los errores y correcciones:</p>
+<pre><code class="lang-powershell">pwsh ./scripts/Show-Tdd.ps1
+</code></pre>
+<p>Se generan siete registros y <code>artifacts/tdd/resumen.csv</code>: ausencia de la clase,
+división que supera el caso básico, fallo del rango, corrección con Newton,
+excepción para negativos, fallo del mensaje sin personalizar y solución final.
+Los fallos intermedios son intencionales y el script comprueba sus códigos de salida.</p>
+<p>Los pasos 11, 13, 15 y 18 muestran recuentos ilustrativos que no coinciden con
+el número de métodos presentes en esos momentos. La evidencia válida es la salida
+real de MSTest. Además, las referencias a «paso 6» al ejecutar pruebas corresponden
+al comando del paso 7; <code>Primes.Tests</code> del paso 19 corresponde a <code>Math.Tests</code>.</p>
+<h2 id="3-algoritmo-de-newton">3. Algoritmo de Newton</h2>
+<p>Para resolver <code>x² - input = 0</code> se utiliza:</p>
+<pre><code class="lang-text">x(n+1) = (x(n) + input / x(n)) / 2
+</code></pre>
+<p>Se comienza en <code>input</code> si es mayor o igual a uno y en uno en caso contrario.
+La iteración termina cuando la diferencia absoluta entre aproximaciones
+consecutivas es menor o igual al 0,1 % de la aproximación actual.</p>
+<p>La expresión de la guía <code>result * result</code> puede desbordarse con números grandes.
+Se usa su forma equivalente <code>result / 2 + (input / result) / 2</code>, que evita ese
+producto y evita sumar dos números grandes antes de dividirlos. La biblioteca
+implementa Newton sin llamar a <code>System.Math.Sqrt</code>; esta última se usa únicamente
+como referencia independiente en las pruebas adicionales.</p>
+<h2 id="4-dominio-y-excepción-solicitada">4. Dominio y excepción solicitada</h2>
+<p>El contrato es <strong>número finito estrictamente positivo</strong>. Se rechaza cero conforme
+a la condición <code>input &lt;= 0.0</code> del paso 17. También se rechazan NaN e infinitos
+para que no se acepten entradas sin una raíz real finita.</p>
+<p>Se produce <code>ArgumentOutOfRangeException</code> con <code>ParamName = &quot;input&quot;</code>, el valor
+recibido y el mensaje literal:</p>
+<blockquote>
+<p>El valor ingresado es invalido, solo se puede ingresar números positivos</p>
+</blockquote>
+<p>.NET agrega información del parámetro y del valor al mensaje de la excepción.
+Por ello, la prueba valida que el texto empiece por el mensaje solicitado y
+comprueba por separado <code>ParamName</code> y <code>ActualValue</code>.</p>
+<h2 id="5-escenarios-de-prueba">5. Escenarios de prueba</h2>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Verificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BasicRooterTest</code></td>
+<td>Raíz de 4 próxima a 2, con tolerancia de 1 %</td>
+</tr>
+<tr>
+<td><code>RooterValueRange</code></td>
+<td>Rango original, con tolerancia de 0,1 %</td>
+</tr>
+<tr>
+<td><code>RooterTestNegativeInputx</code></td>
+<td>Excepción para -10</td>
+</tr>
+<tr>
+<td><code>RooterInvalidInputMessage</code></td>
+<td>Texto literal, parámetro y valor de la excepción</td>
+</tr>
+<tr>
+<td><code>RooterRejectsInvalidValues</code></td>
+<td>7 filas: cero, cero negativo, negativos, NaN e infinitos</td>
+</tr>
+<tr>
+<td><code>RooterHandlesPositiveValues</code></td>
+<td>8 filas: unidad, irracional, cuadrado, fracción y extremos de <code>double</code></td>
+</tr>
+</tbody>
+</table>
+<p>MSTest ejecuta <strong>19 casos</strong>: cuatro pruebas simples y quince filas de datos.
+La prueba del rango realiza además múltiples aserciones dentro del mismo caso.
+Cada prueba sigue preparación, ejecución y comprobación.</p>
+<pre><code class="lang-powershell">dotnet restore MyMath/MyMath.sln
+dotnet build MyMath/MyMath.sln -c Release --no-restore
+dotnet test MyMath/MyMath.sln -c Release --no-build --collect:&quot;XPlat Code Coverage&quot; --results-directory artifacts/test-results --logger &quot;trx;LogFileName=tests.trx&quot;
+</code></pre>
+<h2 id="6-cobertura-y-documentación">6. Cobertura y documentación</h2>
+<p>Coverlet registra las líneas y ramas ejecutadas de <code>Math.Lib</code> en Cobertura XML.
+ReportGenerator transforma ese archivo en HTML. El script exige 100 % de líneas
+y ramas en esta biblioteca pequeña; un valor menor detiene la publicación.
+La cobertura por sí sola no garantiza corrección: se complementa con aserciones
+de precisión, excepciones y límites numéricos.</p>
+<p>Los comentarios XML documentan clases, constantes, métodos, parámetros, retorno,
+excepciones y ejemplos. <code>GenerateDocumentationFile</code> genera el XML de la biblioteca
+y <code>TreatWarningsAsErrors</code> impide dejar miembros públicos sin documentar.
+DocFX genera la referencia navegable a partir del proyecto y esos comentarios.</p>
+<h2 id="7-conclusiones">7. Conclusiones</h2>
+<p>La prueba básica aislada no detecta el defecto de dividir entre dos. El rango
+ampliado demuestra la necesidad de refinar el algoritmo. Las pruebas de dominio
+definen cómo debe responder la biblioteca ante entradas inválidas. La automatización
+repite las comprobaciones antes de generar documentación, cobertura y el componente.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/docs/laboratorio.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Milton H. Flores Chino · 2023078333 · UPT / EPIS
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

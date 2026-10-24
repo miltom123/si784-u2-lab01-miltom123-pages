@@ -1,0 +1,23 @@
+Summary
+  Generated on: 24/10/2026 - 15:50:57
+  Coverage date: 24/10/2026 - 15:50:56
+  Parser: Cobertura
+  Assemblies: 1
+  Classes: 1
+  Files: 1
+  Line coverage: 100%
+  Covered lines: 7
+  Uncovered lines: 0
+  Coverable lines: 7
+  Total lines: 49
+  Branch coverage: 100% (8 of 8)
+  Covered branches: 8
+  Total branches: 8
+  Method coverage: 100% (1 of 1)
+  Full method coverage: 100% (1 of 1)
+  Covered methods: 1
+  Fully covered methods: 1
+  Total methods: 1
+
+Math.Lib             100%
+  Math.Lib.Rooter    100%

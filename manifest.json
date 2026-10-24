@@ -1,0 +1,454 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "C:/Users/MILTONHFLORESCHINO/Documents/Codex/2026-10-24/https-github-com-upt-faing-epis/work/repo/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "RELEASE.md",
+      "output": {
+        ".html": {
+          "relative_path": "RELEASE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Math.Lib.Rooter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Math.Lib.Rooter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Math.Lib.Rooter",
+      "Summary": "<p sourcefile=\"api/Math.Lib.Rooter.yml\" sourcestartlinenumber=\"1\">Calcula raíces cuadradas mediante el método iterativo de Newton.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Math.Lib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Math.Lib.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Math.Lib",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "automatizaciones.md",
+      "output": {
+        ".html": {
+          "relative_path": "automatizaciones.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/Math.Lib_Rooter.html",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/Math.Lib_Rooter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/Summary.txt",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/Summary.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/SummaryGithub.md",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/SummaryGithub.md"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/class.js",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/class.js"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_cog.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_cog.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_cog_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_cog_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_cube.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_cube.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_cube_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_cube_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_fork.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_fork.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_fork_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_fork_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_info-circled.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_info-circled.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_info-circled_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_info-circled_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_search-minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_search-minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_search-minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_search-minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_search-plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_search-plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_search-plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_search-plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_sponsor.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_sponsor.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_star.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_star.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_star_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_star_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_up-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_up-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_up-dir_active.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_up-dir_active.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_up-down-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_up-down-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_up-down-dir_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_up-down-dir_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_wrench.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_wrench.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/icon_wrench_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/icon_wrench_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/index.htm",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/index.htm"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/main.js",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/main.js"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "cobertura/report.css",
+      "output": {
+        "resource": {
+          "relative_path": "cobertura/report.css"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "laboratorio.md",
+      "output": {
+        ".html": {
+          "relative_path": "laboratorio.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "validacion.md",
+      "output": {
+        ".html": {
+          "relative_path": "validacion.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

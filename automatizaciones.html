@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+      <title>Automatizaciones y distribuci&#243;n | Pruebas unitarias con MSTest </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Automatizaciones y distribuci&#243;n | Pruebas unitarias con MSTest ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/docs/automatizaciones.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="MyMath &#183; SI784">
+            MyMath &#183; SI784
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="automatizaciones-y-distribución">Automatizaciones y distribución</h1>
+
+<h2 id="documentación-y-cobertura-en-un-mismo-sitio">Documentación y cobertura en un mismo sitio</h2>
+<p><code>publish_docs.yml</code> se ejecuta con cambios en la biblioteca, documentación,
+herramientas y scripts. <code>publish_cov_report.yml</code> se ejecuta con cambios en las
+pruebas, y en solicitudes de incorporación a <code>main</code>. Ambos admiten ejecución manual.</p>
+<p>Ambos llaman a <code>publish_site.yml</code>, que restaura dependencias, compila, ejecuta
+MSTest con Coverlet, valida la cobertura, genera DocFX y ReportGenerator y guarda
+evidencias como artefactos. En <code>main</code> publica un único sitio con la documentación
+en la raíz y la cobertura en <code>cobertura/</code>. Cada publicación genera el sitio completo:
+ninguno de los dos reportes elimina al otro. Una concurrencia común serializa
+las publicaciones. En solicitudes de incorporación solo se construye y verifica.</p>
+<p>El despliegue requiere que un administrador active <strong>Settings → Pages → Build and
+deployment → Source → GitHub Actions</strong>. <code>GITHUB_TOKEN</code> necesita <code>pages: write</code> e
+<code>id-token: write</code>; no se almacenan credenciales personales en el código.
+Si Pages no está habilitado, los artefactos se generan antes del paso de despliegue
+y se pueden descargar desde Actions.</p>
+<h2 id="paquete-y-release">Paquete y release</h2>
+<p><code>release.yml</code> se ejecuta al subir una etiqueta <code>v2023078333.0.N</code>, por ejemplo
+<code>v2023078333.0.0</code>. Valida que coincida con la versión declarada en el proyecto,
+compila, ejecuta las pruebas y empaqueta <code>UPT.EPIS.MyMath.2023078333</code>.
+Publica en el registro NuGet de la organización y crea un release con el <code>.nupkg</code>.</p>
+<p>La matrícula <code>2023078333</code> es el componente principal de la versión NuGet
+<code>2023078333.0.0</code>. La versión del ensamblado y del archivo se mantiene en <code>1.0.0.0</code>
+porque sus componentes tienen un límite de 65534, que la matrícula supera.
+Para una nueva entrega se incrementa el último componente tanto en el proyecto
+como en la etiqueta. Una versión ya publicada no se sobrescribe.</p>
+<pre><code class="lang-powershell">dotnet pack MyMath/Math.Lib/Math.Lib.csproj -c Release -o artifacts/packages
+git tag v2023078333.0.0
+git push origin v2023078333.0.0
+</code></pre>
+<p>El flujo utiliza <code>packages: write</code>, <code>contents: write</code> y el token temporal de Actions.
+La organización debe permitir crear paquetes. La visibilidad inicial y el acceso
+del paquete dependen de las políticas de GitHub Packages y del repositorio.</p>
+<h2 id="instalación-desde-github-packages">Instalación desde GitHub Packages</h2>
+<p>Configurar el origen NuGet de la organización con una credencial personal que
+tenga <code>read:packages</code>, sin incorporarla al repositorio, y después ejecutar:</p>
+<pre><code class="lang-powershell">dotnet add package UPT.EPIS.MyMath.2023078333 --version 2023078333.0.0 --source https://nuget.pkg.github.com/UPT-FAING-EPIS/index.json
+</code></pre>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://dotnet.github.io/docfx/">DocFX: inicio y generación del sitio</a>.</li>
+<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages">GitHub Pages: flujos personalizados</a>.</li>
+<li><a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry">GitHub Packages: registro NuGet</a>.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/docs/automatizaciones.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Milton H. Flores Chino · 2023078333 · UPT / EPIS
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

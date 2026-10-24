@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+      <title>Laboratorio 01: pruebas unitarias con MSTest | Pruebas unitarias con MSTest </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Laboratorio 01: pruebas unitarias con MSTest | Pruebas unitarias con MSTest ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/docs/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="MyMath &#183; SI784">
+            MyMath &#183; SI784
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="laboratorio-01-pruebas-unitarias-con-mstest">Laboratorio 01: pruebas unitarias con MSTest</h1>
+
+<p><strong>Asignatura:</strong> SI784 · <strong>Periodo:</strong> 2026-II · <strong>Unidad:</strong> II<br>
+<strong>Estudiante:</strong> Milton H. Flores Chino · <strong>Matrícula:</strong> 2023078333<br>
+<strong>Correo institucional:</strong> mf2023078333@virtual.upt.pe</p>
+<p>La solución <strong>MyMath</strong> aplica el ciclo de pruebas unitarias a una biblioteca de
+raíces cuadradas. Se documentan la implementación, el comportamiento ante entradas
+inválidas y las automatizaciones de documentación, cobertura y distribución NuGet.</p>
+<h2 id="ejemplo-de-uso">Ejemplo de uso</h2>
+<pre><code class="lang-csharp">using Math.Lib;
+
+Rooter rooter = new();
+Console.WriteLine(rooter.SquareRoot(16));
+</code></pre>
+<p>El resultado aproxima 4 con una tolerancia relativa de 0,1 %.</p>
+<h2 id="contenido">Contenido</h2>
+<ul>
+<li><a href="laboratorio.html">Desarrollo y explicación de las pruebas</a>.</li>
+<li><a href="automatizaciones.html">Automatización de publicaciones</a>.</li>
+<li><a class="xref" href="api/Math.Lib.Rooter.html">Referencia de clases y métodos</a>.</li>
+<li><a href="cobertura/index.html">Reporte HTML de cobertura</a>.</li>
+</ul>
+<h2 id="reproducir-la-entrega">Reproducir la entrega</h2>
+<p>Desde la raíz del repositorio, con .NET 8 y PowerShell 7:</p>
+<pre><code class="lang-powershell">pwsh ./scripts/Build-Site.ps1
+</code></pre>
+<p>El sitio completo se genera en <code>artifacts/site/index.html</code>. Incluye la API obtenida
+de los comentarios XML y la cobertura calculada sobre la ejecución de las pruebas.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/docs/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Milton H. Flores Chino · 2023078333 · UPT / EPIS
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

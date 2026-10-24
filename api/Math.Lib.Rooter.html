@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+      <title>Class Rooter | Pruebas unitarias con MSTest </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Rooter | Pruebas unitarias con MSTest ">
+      
+      <meta name="description" content="Calcula ra&#237;ces cuadradas mediante el m&#233;todo iterativo de Newton.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/new/main/apiSpec/new?filename=Math_Lib_Rooter.md&amp;value=---%0Auid%3A%20Math.Lib.Rooter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="MyMath &#183; SI784">
+            MyMath &#183; SI784
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Math.Lib.Rooter">
+
+
+
+  <h1 id="Math_Lib_Rooter" data-uid="Math.Lib.Rooter" class="text-break">
+Class Rooter  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/MyMath/Math.Lib/Rooter.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">Math</span>.<a class="xref" href="Math.Lib.html">Lib</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Math.Lib.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Calcula raíces cuadradas mediante el método iterativo de Newton.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Rooter</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Rooter</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Math_Lib_Rooter_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Solo admite números finitos estrictamente positivos.</p>
+</div>
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Math_Lib_Rooter_InvalidInputMessage" data-uid="Math.Lib.Rooter.InvalidInputMessage">
+  InvalidInputMessage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/MyMath/Math.Lib/Rooter.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Mensaje utilizado para informar que la entrada no pertenece al dominio.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string InvalidInputMessage = &quot;El valor ingresado es invalido, solo se puede ingresar n&#250;meros positivos&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Math_Lib_Rooter_SquareRoot_" data-uid="Math.Lib.Rooter.SquareRoot*"></a>
+
+  <h3 id="Math_Lib_Rooter_SquareRoot_System_Double_" data-uid="Math.Lib.Rooter.SquareRoot(System.Double)">
+  SquareRoot(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/MyMath/Math.Lib/Rooter.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtiene una aproximación de la raíz cuadrada del número indicado.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SquareRoot(double input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Número finito mayor que cero.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Raíz cuadrada positiva con precisión relativa de al menos 0,1 %.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="Math_Lib_Rooter_SquareRoot_System_Double__examples">Examples</h4>
+  <pre><code class="lang-csharp">var rooter = new Rooter();
+double result = rooter.SquareRoot(9); // Aproximadamente 3.</code></pre>
+
+
+  <h4 class="section" id="Math_Lib_Rooter_SquareRoot_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Se aplica x(n+1) = (x(n) + input/x(n))/2. La media se calcula
+en dos mitades para evitar desbordamiento con valores grandes.
+El valor inicial es al menos uno para admitir entradas muy pequeñas.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p>La entrada es cero, negativa, NaN o infinita. Incluye <a class="xref" href="Math.Lib.Rooter.html#Math_Lib_Rooter_InvalidInputMessage">InvalidInputMessage</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/UPT-FAING-EPIS/si784-2026-ii-si784-2026-ii-u2-lab01-miltom123/blob/main/MyMath/Math.Lib/Rooter.cs/#L5" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Milton H. Flores Chino · 2023078333 · UPT / EPIS
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
