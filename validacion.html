@@ -166,11 +166,11 @@
 El script finaliza correctamente solo si las siete etapas cumplen su expectativa.
 Los registros completos y los archivos TRX se generan en <code>artifacts/tdd/</code>.</p>
 <h2 id="verificación-de-publicaciones">Verificación de publicaciones</h2>
-<p>Los resultados anteriores corresponden a la validación local. La ejecución remota
-se consulta en la pestaña <strong>Actions</strong> del repositorio. Un despliegue de Pages
-requiere habilitación administrativa: si el servicio está desactivado, la generación
-del sitio puede completarse y el despliegue fallar por configuración.
-El éxito de una compilación local no constituye evidencia de una publicación remota.</p>
+<p>La ejecución remota se consulta en la pestaña <strong>Actions</strong> del repositorio académico.
+Los workflows publican el HTML en el destino de Pages administrado por el estudiante
+y comprueban que la revisión servida coincida con el commit probado. También validan
+la respuesta HTTPS de la documentación, la API y la cobertura antes de aprobar.
+El éxito de una compilación local no sustituye esta comprobación remota.</p>
 
 </article>
 

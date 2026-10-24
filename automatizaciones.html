@@ -83,11 +83,23 @@ evidencias como artefactos. En <code>main</code> publica un único sitio con la 
 en la raíz y la cobertura en <code>cobertura/</code>. Cada publicación genera el sitio completo:
 ninguno de los dos reportes elimina al otro. Una concurrencia común serializa
 las publicaciones. En solicitudes de incorporación solo se construye y verifica.</p>
-<p>El despliegue requiere que un administrador active <strong>Settings → Pages → Build and
-deployment → Source → GitHub Actions</strong>. <code>GITHUB_TOKEN</code> necesita <code>pages: write</code> e
-<code>id-token: write</code>; no se almacenan credenciales personales en el código.
-Si Pages no está habilitado, los artefactos se generan antes del paso de despliegue
-y se pueden descargar desde Actions.</p>
+<p>El HTML se publica en la rama <code>gh-pages</code> del repositorio de destino
+<code>miltom123/si784-u2-lab01-miltom123-pages</code>. Pages está configurado para servir la
+raíz de esa rama. El código y los workflows permanecen en el repositorio académico.
+Este destino permite administrar Pages desde la cuenta del estudiante sin cambiar
+los permisos del repositorio de la organización.</p>
+<p>La publicación usa el secreto <code>PAGES_DEPLOY_KEY</code>, cuya clave de despliegue solo
+puede escribir en el repositorio que aloja el sitio. No se guarda ninguna clave
+en el código ni se utiliza una credencial personal de acceso general. Los workflows
+reutilizables reciben únicamente este secreto. En solicitudes de incorporación
+no se ejecuta el despliegue.</p>
+<p>Tras publicar, <code>Verify-PublishedSite.ps1</code> espera la revisión exacta en <code>revision.txt</code>
+y verifica por HTTPS el inicio, la API de <code>Rooter</code> y el reporte con 100 % de cobertura.
+Un error de publicación o una revisión desactualizada hace fallar el flujo.</p>
+<ul>
+<li><a href="https://miltom123.github.io/si784-u2-lab01-miltom123-pages/">Sitio publicado</a>.</li>
+<li><a href="https://miltom123.github.io/si784-u2-lab01-miltom123-pages/cobertura/index.html">Cobertura publicada</a>.</li>
+</ul>
 <h2 id="paquete-y-release">Paquete y release</h2>
 <p><code>release.yml</code> se ejecuta al subir una etiqueta <code>v2023078333.0.N</code>, por ejemplo
 <code>v2023078333.0.0</code>. Valida que coincida con la versión declarada en el proyecto,
